@@ -19,3 +19,10 @@
         create two files inside traits
             Traits/HasAuthor.php
             Traits/ModelHelpers.php
+    use the traits in both models btn Articles and User
+
+## Create Factories && Seeders 
+     php artisan make:factory  ArticleFactory
+     php artisan make:seeder ArticlesSeeder
+     php artisan make:seeder UsersSeeder
+    php artisan migrate:fresh --seed
