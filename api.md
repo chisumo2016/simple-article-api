@@ -26,3 +26,16 @@
      php artisan make:seeder ArticlesSeeder
      php artisan make:seeder UsersSeeder
     php artisan migrate:fresh --seed
+
+## Create Controllers 
+    Create two controllers Articles and Users
+        php artisan make:controller API/V1/ArticleController -m Article --api
+        php artisan make:controller API/V1/AuthorController
+    ArticleController Methods
+        - Index
+        - Create  - UI
+        - Store
+        - Show
+        - Edit    - UI
+        - Update
+        - Delete
