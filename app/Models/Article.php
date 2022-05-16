@@ -1,13 +1,18 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Traits\HasAuthor;
+use App\Traits\ModelHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
     use HasFactory;
+    use HasAuthor;
+    use ModelHelpers;
 
     const  TABLE ='articles';
 
@@ -42,4 +47,5 @@ class Article extends Model
     {
         return  (string)  $this->author_id;
     }
+
 }
