@@ -9,4 +9,5 @@
         npm install
         npm run dev
         php artisan migrate
-            
+## Create Models && Migration          
+    php artisan make:model Article -m
