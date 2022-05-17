@@ -66,9 +66,20 @@
      we can version control in api file
 
 ### Postman && Custom Exception 
+    - Add the method on bot
+    app/Http/Controllers/API/V1/ArticleController.php
+    app/Http/Controllers/API/V1/AuthorController.php
+    app/Http/Resources/V1/ArticleCollection.php
+    app/Http/Resources/V1/ArticleResource.php
     
 
-
+### Controller methods - Store, Update, Delete
+    app/Http/Controllers/API/V1/ArticleController.php
+    - Implemente all the functionality for all method
+    - In delete method 
+            return response()->setStatusCode(204);
+            return response()->json(null, 204);
+    
 
 
 
