@@ -54,7 +54,7 @@ class Handler extends ExceptionHandler
                         'link'    => 'example.com/link',
                         'status_code' => (string)$e->getStatusCode(),
                     ]
-                ]);
+                ],404);
             }
         });
     }
