@@ -10,6 +10,6 @@ class AuthorController extends Controller
 {
     public  function  show(User $user)
     {
-        
+
     }
 }

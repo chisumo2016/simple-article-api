@@ -39,3 +39,10 @@
         - Edit    - UI
         - Update
         - Delete
+## API Resource | Laravel REST API
+    Creating two API resource collection 
+        https://laravel.com/docs/9.x/eloquent-resources#main-content
+        php artisan make:resource V1/ArticleResource
+        php artisan make:resource V1/AuthorResource
+        php artisan make:resource V1/ArticleCollection -c
+        
