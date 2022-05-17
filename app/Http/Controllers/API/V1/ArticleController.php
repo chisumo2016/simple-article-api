@@ -34,7 +34,7 @@ class ArticleController extends Controller
     public function store(Request $request) :JsonResponse
     {
         $this->validate($request, [
-            'title' => ['required','max:20','unique:articles'],
+            'title' => ['required','max:20','unique:articles,title'],
             'description'=> ['required','min:5']
         ]);
 
@@ -73,7 +73,7 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article): JsonResponse
     {
         $this->validate($request, [
-            'title' => ['required','max:20',Rule::unique('articles')->ignore($article->title())],
+            'title' => ['sometimes','max:20',Rule::unique('articles')->ignore($article->title(),'title')],
             'description'=> ['required','min:5']
         ]);
 
@@ -98,6 +98,6 @@ class ArticleController extends Controller
     public function destroy(Article $article):JsonResponse
     {
         $article->delete();
-        return response()->setStatusCode(204);
+        return response()->json(null,204);
     }
 }
