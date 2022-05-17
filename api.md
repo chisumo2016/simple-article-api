@@ -9,6 +9,7 @@
         npm install
         npm run dev
         php artisan migrate
+
 ## Create Models && Migration          
     php artisan make:model Article -m
 
@@ -25,7 +26,7 @@
      php artisan make:factory  ArticleFactory
      php artisan make:seeder ArticlesSeeder
      php artisan make:seeder UsersSeeder
-    php artisan migrate:fresh --seed
+     php artisan migrate:fresh --seed
 
 ## Create Controllers 
     Create two controllers Articles and Users
@@ -42,7 +43,24 @@
 ## API Resource | Laravel REST API
     Creating two API resource collection 
         https://laravel.com/docs/9.x/eloquent-resources#main-content
+        https://laravel.com/docs/8.x/eloquent-resources
         php artisan make:resource V1/ArticleResource
         php artisan make:resource V1/AuthorResource
         php artisan make:resource V1/ArticleCollection -c
-        
+
+## API Routes
+    https://laravel.com/docs/8.x/sanctum#protecting-routes
+    routes/api.php
+    app/Providers/RouteServiceProvider.php
+     localhost:post/api/articles
+     localhost:test/api/V1/articles
+       $this->routes(function () {
+            Route::middleware('api/v1')
+                ->prefix('api')
+                ->group(base_path('routes/api_v1.php'));
+
+            Route::middleware('web')
+                ->group(base_path('routes/web.php'));
+        });
+
+     we can version control in api file

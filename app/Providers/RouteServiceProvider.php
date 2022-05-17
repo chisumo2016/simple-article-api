@@ -28,6 +28,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->configureRateLimiting();
 
+         //localhost:test/api/articles
         $this->routes(function () {
             Route::middleware('api')
                 ->prefix('api')
@@ -36,6 +37,13 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
         });
+
+        /*** Get Article either by ID /Slug*/
+        Route::bind('article',function ($value){
+            return \App\Models\Article::where('id',$value)
+                ->orWhere('slug',$value)->firstOrFail();
+        });
+
     }
 
     /**
@@ -49,4 +57,5 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
     }
+
 }
