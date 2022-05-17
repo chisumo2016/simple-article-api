@@ -17,7 +17,6 @@ class ArticleCollection extends ResourceCollection
         /*Data we return  as collection*/
         return [
             'data' => $this->collection,
-
         ];
     }
 

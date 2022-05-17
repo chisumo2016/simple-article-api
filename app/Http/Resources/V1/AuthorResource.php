@@ -20,7 +20,7 @@ class AuthorResource extends JsonResource
             'id'    => $this->id(),
             'name'  => $this->name(),
             'links' => [
-                    'self' => route('authors',$this->id())
+                    'self' => route('authors', $this->id())
             ]
         ];
     }

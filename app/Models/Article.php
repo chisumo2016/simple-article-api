@@ -43,9 +43,4 @@ class Article extends Model
         return  (string)  $this->description;
     }
 
-    public  function  author_id():string
-    {
-        return  (string)  $this->author_id;
-    }
-
 }
