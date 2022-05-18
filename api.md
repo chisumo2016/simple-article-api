@@ -81,6 +81,8 @@
             return response()->json(null, 204);
     
 ### Test endpoints with Postman 
+    - Testing all the endpoints via postmans
+        
 
 
 
